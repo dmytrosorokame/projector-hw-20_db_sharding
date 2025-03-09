@@ -1,0 +1,15 @@
+services:
+  postgresql-single-instance:
+    image: postgres:12
+    container_name: postgresql-single-instance
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: books
+    volumes:
+      - postgresql-single-instance-volume:/var/lib/postgresql/data
+
+volumes:
+  postgresql-single-instance-volume:
